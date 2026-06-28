@@ -8,9 +8,11 @@ from pathlib import Path
 from typing import Any
 
 from skills import SkillOutput, documentation_skill
+from skills import graph_skill
 from .comprehension_agent import ComprehensionAgent
 from .architecture_agent import ArchitectureAgent
 from .impact_agent import ImpactAgent
+from .graph_agent import GraphAgent
 
 
 class AgentRunner:
@@ -22,6 +24,7 @@ class AgentRunner:
         self.comprehension = ComprehensionAgent()
         self.architecture = ArchitectureAgent()
         self.impact = ImpactAgent()
+        self.graph = GraphAgent()
 
     def run(self, command: str, repo_path: str, *args: str, **kwargs: str) -> dict[str, Any]:
         """
@@ -57,6 +60,9 @@ class AgentRunner:
             elif command == "/docs":
                 return self._execute_docs(repo_path)
 
+            elif command == "/graph":
+                return self._execute_graph(repo_path)
+
             else:
                 return self._error(f"Unknown command: {command}")
 
@@ -87,6 +93,11 @@ class AgentRunner:
         """Execute /docs command."""
         result = documentation_skill.run(repo_path)
         return self._format_result(result, "docs")
+
+    def _execute_graph(self, repo_path: str) -> dict[str, Any]:
+        """Execute /graph command."""
+        result = self.graph.analyze(repo_path)
+        return self._format_result(result, "graph")
 
     def _format_result(self, output: SkillOutput, command: str) -> dict[str, Any]:
         """Format SkillOutput as result and save to file."""

@@ -84,4 +84,4 @@ def ensure_analyzed(repo_path: str) -> dict[str, Any]:
 
 
 # Expose skill modules for convenient imports.
-from . import analyze_repo_skill, architecture_skill, impact_skill, qna_skill  # noqa: E402,F401
+from . import analyze_repo_skill, architecture_skill, impact_skill, qna_skill, graph_skill  # noqa: E402,F401

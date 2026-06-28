@@ -23,7 +23,7 @@ for candidate in (ROOT_DIR, GITHUB_DIR):
 
 from agents.agent_runner import run_agent
 
-SUPPORTED_COMMANDS = {"/analyze", "/architecture", "/impact", "/ask", "/docs"}
+SUPPORTED_COMMANDS = {"/analyze", "/architecture", "/impact", "/ask", "/docs", "/graph"}
 
 
 def _error_result(command: str | None, message: str) -> dict[str, Any]:
@@ -57,7 +57,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     repo_path = args[1]
 
     try:
-        if command in {"/analyze", "/architecture", "/docs"}:
+        if command in {"/analyze", "/architecture", "/docs", "/graph"}:
             result = run_agent(command, repo_path)
         elif command == "/impact":
             if len(args) < 3:

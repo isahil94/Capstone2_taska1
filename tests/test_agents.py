@@ -89,6 +89,20 @@ def test_impact_agent_analyze_returns_skill_output(monkeypatch):
     assert result.details["affected"] == ["file.py"]
 
 
+def test_graph_agent_analyze_returns_skill_output(monkeypatch):
+    import agents.graph_agent as graph_mod
+    from skills import SkillOutput
+
+    expected = SkillOutput("graph summary", {"nodes": [], "edges": []}, [])
+    monkeypatch.setattr(graph_mod.graph_skill, "run", lambda repo_path: expected)
+
+    agent = graph_mod.GraphAgent()
+    result = agent.analyze("dummy_repo")
+
+    assert result.summary == "graph summary"
+    assert result.details["nodes"] == []
+
+
 def test_agent_runner_routes_each_slash_command(monkeypatch, tmp_path):
     import agents.agent_runner as runner_mod
     from skills import SkillOutput
@@ -102,6 +116,7 @@ def test_agent_runner_routes_each_slash_command(monkeypatch, tmp_path):
     monkeypatch.setattr(runner_mod.ImpactAgent, "analyze", lambda self, repo_path, target_file: fake_output)
     monkeypatch.setattr(runner_mod.ComprehensionAgent, "ask", lambda self, repo_path, question: fake_output)
     monkeypatch.setattr(runner_mod, "documentation_skill", type("DocSkill", (), {"run": staticmethod(lambda repo_path: fake_output)}), raising=False)
+    monkeypatch.setattr(runner_mod, "graph_skill", type("GraphSkill", (), {"run": staticmethod(lambda repo_path: fake_output)}), raising=False)
 
     analyze_result = runner_mod.run_agent("/analyze", "dummy_repo")
     assert analyze_result["status"] == "success"
@@ -123,8 +138,12 @@ def test_agent_runner_routes_each_slash_command(monkeypatch, tmp_path):
     assert docs_result["status"] == "success"
     assert docs_result["command"] == "docs"
 
+    graph_result = runner_mod.run_agent("/graph", "dummy_repo")
+    assert graph_result["status"] == "success"
+    assert graph_result["command"] == "graph"
+
     output_files = list(output_dir.glob("*.json"))
-    assert len(output_files) == 5
+    assert len(output_files) == 6
 
 
 def test_agent_runner_returns_error_for_invalid_commands():
@@ -151,6 +170,7 @@ def test_agent_runner_returns_error_for_invalid_commands():
         (["/impact", "dummy_repo", "file.py"], "impact"),
         (["/ask", "dummy_repo", "What is this?"], "ask"),
         (["/docs", "dummy_repo"], "docs"),
+        (["/graph", "dummy_repo"], "graph"),
     ],
 )
 def test_cli_main_supports_each_slash_command(monkeypatch, capsys, argv, expected_command):
