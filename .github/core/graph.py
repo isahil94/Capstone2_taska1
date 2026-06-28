@@ -9,6 +9,31 @@ from typing import Any
 from .parser import _iter_source_files
 
 
+def _normalize_node_id(node_id: str) -> str:
+    """Normalize graph node IDs so lookups work with either file paths or prefixed IDs."""
+    if not node_id:
+        return node_id
+    if node_id.startswith("file:"):
+        return node_id
+    return f"file:{node_id}"
+
+
+def _extract_imported_module(line: str) -> str | None:
+    """Extract the imported module name from a Python import statement."""
+    stripped = line.strip()
+    if not stripped:
+        return None
+    if stripped.startswith("from "):
+        parts = stripped.split()
+        if len(parts) >= 2:
+            return parts[1].split(".")[0]
+    if stripped.startswith("import "):
+        parts = stripped.split()
+        if len(parts) >= 2:
+            return parts[1].split(".")[0]
+    return None
+
+
 def build_graph(repo_path: str) -> dict[str, Any]:
     """
     Build repository intelligence graphs.
@@ -33,7 +58,7 @@ def build_graph(repo_path: str) -> dict[str, Any]:
             }
 
         files = _iter_source_files(repository_path)
-        nodes = [f"file:{p.relative_to(repository_path).as_posix()}" for p in files]
+        nodes = [_normalize_node_id(p.relative_to(repository_path).as_posix()) for p in files]
         edges = []
         for file_path in files:
             try:
@@ -42,8 +67,8 @@ def build_graph(repo_path: str) -> dict[str, Any]:
                 continue
             relative_path = file_path.relative_to(repository_path).as_posix()
             for line in content.splitlines():
-                if line.lstrip().startswith(("import ", "from ")):
-                    imported_name = line.split()[-1].split(".")[0]
+                imported_name = _extract_imported_module(line)
+                if imported_name:
                     imported_file = None
                     for candidate in files:
                         candidate_name = candidate.stem
@@ -149,9 +174,11 @@ def find_dependents(repo_path: str, target_id: str) -> list[str]:
         with graph_path.open("r", encoding="utf-8") as handle:
             data = json.load(handle)
 
+        normalized_target = _normalize_node_id(target_id)
         dependents = []
         for edge in data.get("edges", []):
-            if edge.get("target") == target_id:
+            edge_target = edge.get("target", "")
+            if edge_target == target_id or _normalize_node_id(edge_target) == normalized_target:
                 dependents.append(edge.get("source", ""))
         return dependents
     except Exception:

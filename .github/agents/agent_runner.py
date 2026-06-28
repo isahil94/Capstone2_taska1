@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from skills import SkillOutput
+from skills import SkillOutput, documentation_skill
 from .comprehension_agent import ComprehensionAgent
 from .architecture_agent import ArchitectureAgent
 from .impact_agent import ImpactAgent
@@ -54,6 +54,9 @@ class AgentRunner:
                 question = " ".join(args)
                 return self._execute_ask(repo_path, question)
 
+            elif command == "/docs":
+                return self._execute_docs(repo_path)
+
             else:
                 return self._error(f"Unknown command: {command}")
 
@@ -79,6 +82,11 @@ class AgentRunner:
         """Execute /ask command."""
         result = self.comprehension.ask(repo_path, question)
         return self._format_result(result, "ask")
+
+    def _execute_docs(self, repo_path: str) -> dict[str, Any]:
+        """Execute /docs command."""
+        result = documentation_skill.run(repo_path)
+        return self._format_result(result, "docs")
 
     def _format_result(self, output: SkillOutput, command: str) -> dict[str, Any]:
         """Format SkillOutput as result and save to file."""
