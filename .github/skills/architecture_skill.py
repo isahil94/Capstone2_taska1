@@ -60,42 +60,97 @@ def run(repo_path: str) -> SkillOutput:
 
         ignored_markers = (".git", ".venv", "__pycache__", ".pytest_cache", ".vscode", "analysis-outputs")
 
-        def classify_path(path_value: str) -> str | None:
-            normalized_path = str(path_value).lower()
+        def normalize_path(path_value: str) -> str:
+            normalized = str(path_value).strip()
+            if not normalized:
+                return ""
+            if normalized.startswith("file:"):
+                normalized = normalized[5:]
+            normalized = normalized.replace("\\", "/")
+            normalized = normalized.lstrip("./")
+            return normalized
+
+        def normalize_node_id(node_id: str) -> str:
+            normalized = str(node_id or "").strip()
+            if normalized.startswith("file:"):
+                normalized = normalized[5:]
+            return normalized
+
+        def classify_path(path_value: str, incoming_count: int = 0, outgoing_count: int = 0, total_degree: int = 0) -> str | None:
+            normalized_path = normalize_path(path_value).lower()
             if any(marker in normalized_path for marker in ignored_markers):
                 return None
-            if any(token in normalized_path for token in ("agent_cli", "agent", "api")):
-                return "API"
-            if any(token in normalized_path for token in ("engine", "core", "parser", "graph", "service")):
-                return "Service"
-            if any(token in normalized_path for token in ("frontend", "react", "component")):
-                return "API"
-            if any(token in normalized_path for token in ("config", "package.json", "requirements", ".env")):
-                return "Config"
-            if any(token in normalized_path for token in ("docs", "readme", ".md")):
+            if normalized_path.startswith("tests/") or "/tests/" in normalized_path or normalized_path.startswith("test_") or normalized_path.endswith("_test.py"):
+                return None
+            if any(token in normalized_path for token in ("/docs/", "/doc/")) or normalized_path.endswith(".md") or normalized_path.endswith(".txt") or normalized_path.endswith(".rst") or normalized_path.endswith("readme"):
                 return "Documentation"
+            if any(token in normalized_path for token in ("package.json", "requirements.txt", "requirements", "pyproject.toml", "setup.cfg", "setup.py", "tox.ini", "pytest.ini", ".env", ".yaml", ".yml", "dockerfile", "docker-compose.yml", "config")):
+                return "Config"
+            if normalized_path.startswith("frontend/") or normalized_path.startswith("frontend") or "/frontend/" in normalized_path:
+                return "API"
+
+            if outgoing_count >= 2 and incoming_count <= 1:
+                return "API"
+            if incoming_count >= 2 and outgoing_count <= 1 and total_degree >= 2:
+                return "Utility"
+            if total_degree >= 3 and outgoing_count >= 1:
+                return "Service"
+            if incoming_count >= 1 and outgoing_count >= 1:
+                return "Service"
+            if outgoing_count >= 1:
+                return "API"
+            if any(token in normalized_path for token in ("/core/", "/service/", "/engine/", "/parser/", "/graph/")):
+                return "Service"
             return "Utility"
 
         graph_nodes = graph_result.get("graph", {}).get("nodes", [])
+        graph_edges = graph_result.get("graph", {}).get("edges", [])
         if not graph_nodes:
             graph_nodes = []
+            graph_edges = []
+
+        file_paths: list[str] = []
+        indegree: dict[str, int] = {}
+        outdegree: dict[str, int] = {}
 
         for node in graph_nodes:
             if node.get("type") != "file":
                 continue
 
             path_value = node.get("path") or node.get("filePath") or node.get("id") or ""
-            if not path_value:
+            file_path = normalize_path(path_value)
+            if not file_path:
                 continue
 
-            if path_value.startswith("file:"):
-                path_value = path_value[5:]
+            file_paths.append(file_path)
+            indegree[file_path] = 0
+            outdegree[file_path] = 0
 
-            layer = classify_path(path_value)
-            if not layer:
+        for edge in graph_edges:
+            source_id = normalize_node_id(edge.get("source"))
+            target_id = normalize_node_id(edge.get("target"))
+            if not source_id or not target_id:
                 continue
+            source_path = next((path for path in file_paths if normalize_node_id(path) == source_id), None)
+            target_path = next((path for path in file_paths if normalize_node_id(path) == target_id), None)
+            if not source_path or not target_path or source_path == target_path:
+                continue
+            edge_type = str(edge.get("type", "")).lower()
+            if edge_type in {"imports", "calls", "dependency", "depends"}:
+                outdegree[source_path] = outdegree.get(source_path, 0) + 1
+                indegree[target_path] = indegree.get(target_path, 0) + 1
 
-            layers[layer].append(path_value)
+        if file_paths:
+            for file_path in sorted(set(file_paths)):
+                layer = classify_path(
+                    file_path,
+                    incoming_count=indegree.get(file_path, 0),
+                    outgoing_count=outdegree.get(file_path, 0),
+                    total_degree=indegree.get(file_path, 0) + outdegree.get(file_path, 0),
+                )
+                if not layer:
+                    continue
+                layers[layer].append(file_path)
 
         if not any(layers.values()):
             for file_info in parse_result.get("files", []):

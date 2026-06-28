@@ -220,6 +220,38 @@ def test_core_modules_work_without_backend_dependency(tmp_path):
     assert graph_result["summary"]["total_nodes"] >= 2
 
 
+def test_architecture_skill_classifies_by_graph_structure(tmp_path):
+    from skills import architecture_skill
+
+    repo_dir = tmp_path / "sample_repo"
+    repo_dir.mkdir()
+    (repo_dir / "main.py").write_text(
+        "from service import run_service\nfrom util import helper\n\nrun_service(helper())\n",
+        encoding="utf-8",
+    )
+    (repo_dir / "service.py").write_text(
+        "from util import helper\n\ndef run_service(value):\n    return helper(value)\n",
+        encoding="utf-8",
+    )
+    (repo_dir / "util.py").write_text(
+        "def helper(value=1):\n    return value\n",
+        encoding="utf-8",
+    )
+    (repo_dir / "package.json").write_text('{"name": "demo"}', encoding="utf-8")
+    (repo_dir / "README.md").write_text("# Demo", encoding="utf-8")
+    (repo_dir / "tests").mkdir()
+    (repo_dir / "tests" / "test_main.py").write_text("def test_main():\n    assert True\n", encoding="utf-8")
+
+    result = architecture_skill.run(str(repo_dir))
+
+    assert "main.py" in result.details["layers"]["API"]
+    assert "service.py" in result.details["layers"]["Service"]
+    assert "util.py" in result.details["layers"]["Utility"]
+    assert "package.json" in result.details["layers"]["Config"]
+    assert "README.md" in result.details["layers"]["Documentation"]
+    assert "tests/test_main.py" not in result.details["layers"]["API"]
+
+
 def test_impact_skill_traces_dependencies(tmp_path):
     from skills import impact_skill
 
