@@ -1,0 +1,44 @@
+{
+  "command": "analyze",
+  "timestamp": "2026-06-29T01:11:11.451479",
+  "status": "success",
+  "summary": "Analyzed repository: Capstone 2 (65 files, 12 classes)",
+  "details": {
+    "repository": {
+      "path": "F:\\Projects\\Capstone 2",
+      "name": "Capstone 2"
+    },
+    "files": {
+      "total": 65,
+      "classes": 12,
+      "functions": 95,
+      "imports": 231
+    },
+    "graphs": {
+      "types": [
+        "dependency"
+      ],
+      "nodes": 67,
+      "edges": 14
+    },
+    "file_list": [
+      ".github\\__init__.py",
+      ".github\\agents\\__init__.py",
+      ".github\\agents\\agent_runner.py",
+      ".github\\agents\\AGENTS.md",
+      ".github\\agents\\architecture-agent.md",
+      ".github\\agents\\architecture_agent.py",
+      ".github\\agents\\comprehension-agent.md",
+      ".github\\agents\\comprehension_agent.py",
+      ".github\\agents\\graph_agent.py",
+      ".github\\agents\\impact-agent.md"
+    ]
+  },
+  "evidence": [
+    "Found 65 source files",
+    "Identified 12 classes",
+    "Identified 95 functions",
+    "Built 1 dependency graphs",
+    "Extracted 67 nodes"
+  ]
+}

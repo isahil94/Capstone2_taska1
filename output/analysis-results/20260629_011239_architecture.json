@@ -1,0 +1,71 @@
+{
+  "command": "architecture",
+  "timestamp": "2026-06-29T01:12:39.836670",
+  "status": "success",
+  "summary": "Architecture analysis: Identified 13 components across 5 layers",
+  "details": {
+    "layers": {
+      "frontend": [
+        "frontend"
+      ],
+      "engine": [
+        "engine"
+      ],
+      "docs": [
+        "docs"
+      ],
+      "automation": [
+        ".github",
+        "local_models",
+        "output",
+        "tests"
+      ],
+      "other": [
+        ".git",
+        ".pytest_cache",
+        ".venv",
+        ".vscode",
+        "analysis-outputs",
+        "__pycache__"
+      ]
+    },
+    "layer_distribution": {
+      "frontend": 1,
+      "engine": 1,
+      "docs": 1,
+      "automation": 4,
+      "other": 6
+    },
+    "total_components": 13,
+    "top_level_directories": [
+      ".git",
+      ".github",
+      ".pytest_cache",
+      ".venv",
+      ".vscode",
+      "analysis-outputs",
+      "docs",
+      "engine",
+      "frontend",
+      "local_models",
+      "output",
+      "tests",
+      "__pycache__"
+    ],
+    "graph_summary": {
+      "graph_types": [
+        "dependency"
+      ],
+      "total_graphs": 1,
+      "total_nodes": 67,
+      "total_edges": 14
+    }
+  },
+  "evidence": [
+    "Frontend Layer: 1 components",
+    "Engine Layer: 1 components",
+    "Documentation Layer: 1 components",
+    "Automation Layer: 4 components",
+    "Other Layer: 6 components"
+  ]
+}
