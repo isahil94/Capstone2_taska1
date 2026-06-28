@@ -41,14 +41,20 @@ def run(repo_path: str, target_file: str) -> SkillOutput:
                 evidence=[],
             )
 
-        # Find dependents (files that depend on the target)
-        dependents = find_dependents(repo_path, target_file)
+        target_id = target_file
+        dependents = find_dependents(repo_path, target_id)
+        visited = set(dependents)
+        queue = list(dependents)
 
-        # Build transitive dependencies (if possible)
-        all_impacted = set(dependents)
-        for dependent in dependents:
-            transitive = find_dependents(repo_path, dependent)
-            all_impacted.update(transitive)
+        while queue:
+            current = queue.pop()
+            next_dependents = find_dependents(repo_path, current)
+            for dependent in next_dependents:
+                if dependent not in visited:
+                    visited.add(dependent)
+                    queue.append(dependent)
+
+        all_impacted = sorted(visited)
 
         summary = (
             f"Impact analysis for '{target_file}': "
@@ -64,9 +70,10 @@ def run(repo_path: str, target_file: str) -> SkillOutput:
 
         details = {
             "target": target_file,
-            "direct_dependents": dependents[:20],  # Limit to 20
+            "direct_dependents": dependents[:20],
             "impacted_count": len(all_impacted),
-            "risk_areas": dependents,
+            "risk_areas": all_impacted,
+            "impacted": all_impacted,
         }
 
         return SkillOutput(

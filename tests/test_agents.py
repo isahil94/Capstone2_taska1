@@ -192,3 +192,48 @@ def test_core_modules_work_without_backend_dependency(tmp_path):
 
     graph_result = build_graph(str(repo_dir))
     assert graph_result["summary"]["total_nodes"] >= 2
+
+
+def test_impact_skill_traces_dependencies(tmp_path):
+    from skills import impact_skill
+
+    repo_dir = tmp_path / "sample_repo"
+    repo_dir.mkdir()
+    (repo_dir / "main.py").write_text("from util import helper\n", encoding="utf-8")
+    (repo_dir / "util.py").write_text("def helper():\n    return 1\n", encoding="utf-8")
+
+    result = impact_skill.run(str(repo_dir), "util.py")
+
+    assert result.summary.startswith("Impact analysis")
+    assert result.details["target"] == "util.py"
+    assert result.details["impacted_count"] >= 1
+
+
+def test_documentation_skill_generates_markdown(tmp_path):
+    from skills import documentation_skill
+
+    repo_dir = tmp_path / "sample_repo"
+    repo_dir.mkdir()
+    (repo_dir / "main.py").write_text("def run():\n    return 1\n", encoding="utf-8")
+
+    result = documentation_skill.run(str(repo_dir))
+
+    assert "## Overview" in result.details["markdown"]
+    assert "## Architecture" in result.details["markdown"]
+
+
+def test_build_graph_saves_knowledge_graph(tmp_path):
+    from core import build_graph
+
+    repo_dir = tmp_path / "sample_repo"
+    repo_dir.mkdir()
+    (repo_dir / "main.py").write_text("from util import helper\n", encoding="utf-8")
+    (repo_dir / "util.py").write_text("def helper():\n    return 1\n", encoding="utf-8")
+
+    build_graph(str(repo_dir))
+    knowledge_graph_path = repo_dir / ".knowledge-graph.json"
+
+    assert knowledge_graph_path.exists()
+    data = json.loads(knowledge_graph_path.read_text(encoding="utf-8"))
+    assert "nodes" in data
+    assert "edges" in data

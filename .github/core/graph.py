@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
 
@@ -39,9 +40,18 @@ def build_graph(repo_path: str) -> dict[str, Any]:
                 content = file_path.read_text(encoding="utf-8")
             except Exception:
                 continue
+            relative_path = file_path.relative_to(repository_path).as_posix()
             for line in content.splitlines():
                 if line.lstrip().startswith(("import ", "from ")):
-                    edges.append((file_path.name, line.strip()))
+                    imported_name = line.split()[-1].split(".")[0]
+                    imported_file = None
+                    for candidate in files:
+                        candidate_name = candidate.stem
+                        if candidate_name == imported_name:
+                            imported_file = candidate.relative_to(repository_path).as_posix()
+                            break
+                    if imported_file:
+                        edges.append((relative_path, imported_file))
 
         graphs_data = [
             {
@@ -50,10 +60,17 @@ def build_graph(repo_path: str) -> dict[str, Any]:
                 "edges": len(edges),
                 "details": {
                     "nodes": [{"id": node, "type": "file", "label": node} for node in nodes],
-                    "edges": [{"source": source, "target": target, "relationship": "imports"} for source, target in [(n, e) for n, e in []]],
+                    "edges": [{"source": source, "target": target, "relationship": "imports"} for source, target in edges],
                 },
             }
         ]
+
+        knowledge_graph = {
+            "nodes": [{"id": node, "type": "file", "label": node} for node in nodes],
+            "edges": [{"source": source, "target": target, "relationship": "imports"} for source, target in edges],
+        }
+        knowledge_graph_path = repository_path / ".knowledge-graph.json"
+        knowledge_graph_path.write_text(json.dumps(knowledge_graph, indent=2), encoding="utf-8")
 
         return {
             "local_path": str(repository_path),
@@ -121,6 +138,21 @@ def find_dependents(repo_path: str, target_id: str) -> list[str]:
         List of node IDs that depend on target
     """
     try:
-        return []
+        repository_path = Path(repo_path).resolve()
+        if not repository_path.exists() or not repository_path.is_dir():
+            return []
+
+        graph_path = repository_path / ".knowledge-graph.json"
+        if not graph_path.exists():
+            return []
+
+        with graph_path.open("r", encoding="utf-8") as handle:
+            data = json.load(handle)
+
+        dependents = []
+        for edge in data.get("edges", []):
+            if edge.get("target") == target_id:
+                dependents.append(edge.get("source", ""))
+        return dependents
     except Exception:
         return []

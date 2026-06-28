@@ -6,6 +6,14 @@ import json
 from pathlib import Path
 from typing import Any
 
+from . import analyze_repo_skill, architecture_skill, impact_skill, qna_skill
+from .documentation_skill import run as documentation_skill_run
+
+
+def documentation_skill(repo_path: str):
+    """Compatibility wrapper for the documentation skill."""
+    return documentation_skill_run(repo_path)
+
 
 class SkillOutput:
     """Structured output for all skills."""
