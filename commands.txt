@@ -1,0 +1,41 @@
+git add .
+git commit -m "Phase 6 – Repository Intelligence Graph"
+git push
+
+Set-Location "f:\Projects\Capstone 2\backend"
+git status
+git add .
+git commit -m "docs: align agent requirement across project docs"
+git push -u origin feature-auth
+
+uv run pytest
+
+uv run ruff check .
+
+uv run mypy app
+
+
+cd "f:\Projects\Capstone 2\frontend"
+npm install
+npm run dev
+
+
+Set-Location "F:\Projects\Capstone 2\backend"; .\.venv\Scripts\Activate.ps1; python -m pip install requests transformers torch sentencepiece scikit-learn
+
+.venv\Scripts\activate
+
+uv run uvicorn main:app --reload                   
+
+uv add openai
+
+
+
+F:\Projects\Capstone 2\local_models
+
+.\llama-server.exe -m ..\local_models\qwen2.5-coder-7b-instruct-q5_k_m.gguf -c 4096
+
+.\llama-server.exe -m ..\local_models\gemma-4-12b-it-qat-q4_0.gguf -c 4096 -t 12
+
+hf download Qwen/Qwen2.5-Coder-7B-Instruct-GGUF --include "*q5_k_m.gguf" --local-dir "F:\Projects\Capstone 2\local_models"
+
+python agent_cli.py /analyze "F:\Projects\Capstone 2"      

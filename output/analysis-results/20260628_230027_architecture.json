@@ -1,0 +1,40 @@
+{
+  "command": "architecture",
+  "timestamp": "2026-06-28T23:00:27.308327",
+  "status": "success",
+  "summary": "Architecture analysis: Identified 5 components across 3 layers",
+  "details": {
+    "layers": {
+      "service": [
+        "scripts\\auto_ticket_processor.py"
+      ],
+      "data": [
+        "agents\\htil_store.py",
+        "docs\\05_MODELS_PARAMETERS_FUNCTIONALITY.md"
+      ],
+      "utility": [
+        "config.py",
+        "ui\\app.py"
+      ]
+    },
+    "layer_distribution": {
+      "service": 1,
+      "data": 2,
+      "utility": 2
+    },
+    "total_components": 5,
+    "graph_summary": {
+      "graph_types": [
+        "dependency"
+      ],
+      "total_graphs": 1,
+      "total_nodes": 56,
+      "total_edges": 182
+    }
+  },
+  "evidence": [
+    "Service Layer: 1 components",
+    "Data Layer: 2 components",
+    "Utility Layer: 2 components"
+  ]
+}

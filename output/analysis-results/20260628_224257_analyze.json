@@ -1,0 +1,12 @@
+{
+  "command": "analyze",
+  "timestamp": "2026-06-28T22:42:57.647009",
+  "status": "success",
+  "summary": "Repository analysis failed",
+  "details": {
+    "error": "No module named 'app'"
+  },
+  "evidence": [
+    "Exception: No module named 'app'"
+  ]
+}

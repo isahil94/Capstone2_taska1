@@ -1,0 +1,35 @@
+{
+  "command": "architecture",
+  "timestamp": "2026-06-28T22:59:18.315135",
+  "status": "success",
+  "summary": "Architecture analysis: Identified 4 components across 2 layers",
+  "details": {
+    "layers": {
+      "data": [
+        ".github\\core\\repository.py"
+      ],
+      "utility": [
+        "frontend\\src\\App.jsx",
+        "frontend\\src\\main.jsx",
+        "frontend\\vite.config.js"
+      ]
+    },
+    "layer_distribution": {
+      "data": 1,
+      "utility": 3
+    },
+    "total_components": 4,
+    "graph_summary": {
+      "graph_types": [
+        "dependency"
+      ],
+      "total_graphs": 1,
+      "total_nodes": 59,
+      "total_edges": 209
+    }
+  },
+  "evidence": [
+    "Data Layer: 1 components",
+    "Utility Layer: 3 components"
+  ]
+}

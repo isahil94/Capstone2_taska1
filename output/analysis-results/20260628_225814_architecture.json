@@ -1,0 +1,12 @@
+{
+  "command": "architecture",
+  "timestamp": "2026-06-28T22:58:14.049837",
+  "status": "success",
+  "summary": "Architecture analysis: Identified 0 components across 0 layers",
+  "details": {
+    "layers": {},
+    "layer_distribution": {},
+    "total_components": 0
+  },
+  "evidence": []
+}
