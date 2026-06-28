@@ -1,0 +1,2630 @@
+{
+  "command": "graph",
+  "timestamp": "2026-06-29T02:08:21.825269",
+  "status": "success",
+  "summary": "Knowledge graph generated successfully",
+  "details": {
+    "graph": {
+      "nodes": [
+        {
+          "id": "file:.github/__init__.py",
+          "type": "file",
+          "label": "__init__.py",
+          "path": ".github/__init__.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/agents/__init__.py",
+          "type": "file",
+          "label": "__init__.py",
+          "path": ".github/agents/__init__.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/agents/agent_runner.py",
+          "type": "file",
+          "label": "agent_runner.py",
+          "path": ".github/agents/agent_runner.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/agents/AGENTS.md",
+          "type": "file",
+          "label": "AGENTS.md",
+          "path": ".github/agents/AGENTS.md",
+          "language": "md"
+        },
+        {
+          "id": "file:.github/agents/architecture-agent.md",
+          "type": "file",
+          "label": "architecture-agent.md",
+          "path": ".github/agents/architecture-agent.md",
+          "language": "md"
+        },
+        {
+          "id": "file:.github/agents/architecture_agent.py",
+          "type": "file",
+          "label": "architecture_agent.py",
+          "path": ".github/agents/architecture_agent.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/agents/comprehension-agent.md",
+          "type": "file",
+          "label": "comprehension-agent.md",
+          "path": ".github/agents/comprehension-agent.md",
+          "language": "md"
+        },
+        {
+          "id": "file:.github/agents/comprehension_agent.py",
+          "type": "file",
+          "label": "comprehension_agent.py",
+          "path": ".github/agents/comprehension_agent.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/agents/graph_agent.py",
+          "type": "file",
+          "label": "graph_agent.py",
+          "path": ".github/agents/graph_agent.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/agents/impact-agent.md",
+          "type": "file",
+          "label": "impact-agent.md",
+          "path": ".github/agents/impact-agent.md",
+          "language": "md"
+        },
+        {
+          "id": "file:.github/agents/impact_agent.py",
+          "type": "file",
+          "label": "impact_agent.py",
+          "path": ".github/agents/impact_agent.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/agents/run-agent-manifest.md",
+          "type": "file",
+          "label": "run-agent-manifest.md",
+          "path": ".github/agents/run-agent-manifest.md",
+          "language": "md"
+        },
+        {
+          "id": "file:.github/copilot-instructions copy.md",
+          "type": "file",
+          "label": "copilot-instructions copy.md",
+          "path": ".github/copilot-instructions copy.md",
+          "language": "md"
+        },
+        {
+          "id": "file:.github/copilot-instructions.md",
+          "type": "file",
+          "label": "copilot-instructions.md",
+          "path": ".github/copilot-instructions.md",
+          "language": "md"
+        },
+        {
+          "id": "file:.github/core/__init__.py",
+          "type": "file",
+          "label": "__init__.py",
+          "path": ".github/core/__init__.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/core/graph.py",
+          "type": "file",
+          "label": "graph.py",
+          "path": ".github/core/graph.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/core/parser.py",
+          "type": "file",
+          "label": "parser.py",
+          "path": ".github/core/parser.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/core/repository.py",
+          "type": "file",
+          "label": "repository.py",
+          "path": ".github/core/repository.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/examples/__init__.py",
+          "type": "file",
+          "label": "__init__.py",
+          "path": ".github/examples/__init__.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/examples/test_system.py",
+          "type": "file",
+          "label": "test_system.py",
+          "path": ".github/examples/test_system.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/hooks/__init__.py",
+          "type": "file",
+          "label": "__init__.py",
+          "path": ".github/hooks/__init__.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/hooks/on_analysis_complete.py",
+          "type": "file",
+          "label": "on_analysis_complete.py",
+          "path": ".github/hooks/on_analysis_complete.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/hooks/on_file_modified.py",
+          "type": "file",
+          "label": "on_file_modified.py",
+          "path": ".github/hooks/on_file_modified.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/skills/__init__.py",
+          "type": "file",
+          "label": "__init__.py",
+          "path": ".github/skills/__init__.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/skills/analyze_repo_skill.py",
+          "type": "file",
+          "label": "analyze_repo_skill.py",
+          "path": ".github/skills/analyze_repo_skill.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/skills/architecture_skill.py",
+          "type": "file",
+          "label": "architecture_skill.py",
+          "path": ".github/skills/architecture_skill.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/skills/documentation_skill.py",
+          "type": "file",
+          "label": "documentation_skill.py",
+          "path": ".github/skills/documentation_skill.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/skills/graph_skill.py",
+          "type": "file",
+          "label": "graph_skill.py",
+          "path": ".github/skills/graph_skill.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/skills/impact_skill.py",
+          "type": "file",
+          "label": "impact_skill.py",
+          "path": ".github/skills/impact_skill.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/skills/qna_skill.py",
+          "type": "file",
+          "label": "qna_skill.py",
+          "path": ".github/skills/qna_skill.py",
+          "language": "py"
+        },
+        {
+          "id": "file:.github/workflows/ci.yml",
+          "type": "file",
+          "label": "ci.yml",
+          "path": ".github/workflows/ci.yml",
+          "language": "yml"
+        },
+        {
+          "id": "file:agent_cli.py",
+          "type": "file",
+          "label": "agent_cli.py",
+          "path": "agent_cli.py",
+          "language": "py"
+        },
+        {
+          "id": "file:AI_CONTEXT - Copy.md",
+          "type": "file",
+          "label": "AI_CONTEXT - Copy.md",
+          "path": "AI_CONTEXT - Copy.md",
+          "language": "md"
+        },
+        {
+          "id": "file:AI_CONTEXT.md",
+          "type": "file",
+          "label": "AI_CONTEXT.md",
+          "path": "AI_CONTEXT.md",
+          "language": "md"
+        },
+        {
+          "id": "file:commands.txt",
+          "type": "file",
+          "label": "commands.txt",
+          "path": "commands.txt",
+          "language": "txt"
+        },
+        {
+          "id": "file:docs/architecture_and_flow.md",
+          "type": "file",
+          "label": "architecture_and_flow.md",
+          "path": "docs/architecture_and_flow.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/ARCHITECTURE_DIAGRAMS.md",
+          "type": "file",
+          "label": "ARCHITECTURE_DIAGRAMS.md",
+          "path": "docs/ARCHITECTURE_DIAGRAMS.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/COMPLETION_SUMMARY.md",
+          "type": "file",
+          "label": "COMPLETION_SUMMARY.md",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/HOW_TO_RUN.md",
+          "type": "file",
+          "label": "HOW_TO_RUN.md",
+          "path": "docs/HOW_TO_RUN.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "type": "file",
+          "label": "IMPLEMENTATION_GUIDE.md",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/phase-5-code-comprehension-outputs.md",
+          "type": "file",
+          "label": "phase-5-code-comprehension-outputs.md",
+          "path": "docs/phase-5-code-comprehension-outputs.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/QUICK_REFERENCE.md",
+          "type": "file",
+          "label": "QUICK_REFERENCE.md",
+          "path": "docs/QUICK_REFERENCE.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/README.md",
+          "type": "file",
+          "label": "README.md",
+          "path": "docs/README.md",
+          "language": "md"
+        },
+        {
+          "id": "file:docs/START_HERE.md",
+          "type": "file",
+          "label": "START_HERE.md",
+          "path": "docs/START_HERE.md",
+          "language": "md"
+        },
+        {
+          "id": "file:dummy.txt",
+          "type": "file",
+          "label": "dummy.txt",
+          "path": "dummy.txt",
+          "language": "txt"
+        },
+        {
+          "id": "file:frontend/package-lock.json",
+          "type": "file",
+          "label": "package-lock.json",
+          "path": "frontend/package-lock.json",
+          "language": "json"
+        },
+        {
+          "id": "file:frontend/package.json",
+          "type": "file",
+          "label": "package.json",
+          "path": "frontend/package.json",
+          "language": "json"
+        },
+        {
+          "id": "file:frontend/src/App.jsx",
+          "type": "file",
+          "label": "App.jsx",
+          "path": "frontend/src/App.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/components/Canvas.jsx",
+          "type": "file",
+          "label": "Canvas.jsx",
+          "path": "frontend/src/components/Canvas.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/components/Dashboard.jsx",
+          "type": "file",
+          "label": "Dashboard.jsx",
+          "path": "frontend/src/components/Dashboard.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/components/ExplainPanel.jsx",
+          "type": "file",
+          "label": "ExplainPanel.jsx",
+          "path": "frontend/src/components/ExplainPanel.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/components/FilePreview.jsx",
+          "type": "file",
+          "label": "FilePreview.jsx",
+          "path": "frontend/src/components/FilePreview.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/components/GraphView.jsx",
+          "type": "file",
+          "label": "GraphView.jsx",
+          "path": "frontend/src/components/GraphView.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/components/RepoForm.jsx",
+          "type": "file",
+          "label": "RepoForm.jsx",
+          "path": "frontend/src/components/RepoForm.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/components/Sidebar.jsx",
+          "type": "file",
+          "label": "Sidebar.jsx",
+          "path": "frontend/src/components/Sidebar.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/src/main.jsx",
+          "type": "file",
+          "label": "main.jsx",
+          "path": "frontend/src/main.jsx",
+          "language": "jsx"
+        },
+        {
+          "id": "file:frontend/vite.config.js",
+          "type": "file",
+          "label": "vite.config.js",
+          "path": "frontend/vite.config.js",
+          "language": "js"
+        },
+        {
+          "id": "file:ONBOARDING.md",
+          "type": "file",
+          "label": "ONBOARDING.md",
+          "path": "ONBOARDING.md",
+          "language": "md"
+        },
+        {
+          "id": "file:README.md",
+          "type": "file",
+          "label": "README.md",
+          "path": "README.md",
+          "language": "md"
+        },
+        {
+          "id": "file:requirements.txt",
+          "type": "file",
+          "label": "requirements.txt",
+          "path": "requirements.txt",
+          "language": "txt"
+        },
+        {
+          "id": "file:tests/test_agents.py",
+          "type": "file",
+          "label": "test_agents.py",
+          "path": "tests/test_agents.py",
+          "language": "py"
+        },
+        {
+          "id": "file:tests/test_jobs_and_explain.py",
+          "type": "file",
+          "label": "test_jobs_and_explain.py",
+          "path": "tests/test_jobs_and_explain.py",
+          "language": "py"
+        },
+        {
+          "id": "file:tree_agent.txt",
+          "type": "file",
+          "label": "tree_agent.txt",
+          "path": "tree_agent.txt",
+          "language": "txt"
+        },
+        {
+          "id": "file:tree_core.txt",
+          "type": "file",
+          "label": "tree_core.txt",
+          "path": "tree_core.txt",
+          "language": "txt"
+        },
+        {
+          "id": "file:tree_skills.txt",
+          "type": "file",
+          "label": "tree_skills.txt",
+          "path": "tree_skills.txt",
+          "language": "txt"
+        },
+        {
+          "id": "class:.github/agents/agent_runner.py:AgentRunner",
+          "type": "class",
+          "label": "AgentRunner",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:__init__",
+          "type": "function",
+          "label": "__init__",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_execute_analyze",
+          "type": "function",
+          "label": "_execute_analyze",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_execute_architecture",
+          "type": "function",
+          "label": "_execute_architecture",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_execute_impact",
+          "type": "function",
+          "label": "_execute_impact",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_execute_ask",
+          "type": "function",
+          "label": "_execute_ask",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_execute_docs",
+          "type": "function",
+          "label": "_execute_docs",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_execute_graph",
+          "type": "function",
+          "label": "_execute_graph",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_format_result",
+          "type": "function",
+          "label": "_format_result",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_error",
+          "type": "function",
+          "label": "_error",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:_save_output",
+          "type": "function",
+          "label": "_save_output",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:run_agent",
+          "type": "function",
+          "label": "run_agent",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/agent_runner.py:get_runner",
+          "type": "function",
+          "label": "get_runner",
+          "path": ".github/agents/agent_runner.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/agents/architecture_agent.py:ArchitectureAgent",
+          "type": "class",
+          "label": "ArchitectureAgent",
+          "path": ".github/agents/architecture_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/architecture_agent.py:analyze",
+          "type": "function",
+          "label": "analyze",
+          "path": ".github/agents/architecture_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/agents/comprehension_agent.py:ComprehensionAgent",
+          "type": "class",
+          "label": "ComprehensionAgent",
+          "path": ".github/agents/comprehension_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/comprehension_agent.py:analyze",
+          "type": "function",
+          "label": "analyze",
+          "path": ".github/agents/comprehension_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/comprehension_agent.py:ask",
+          "type": "function",
+          "label": "ask",
+          "path": ".github/agents/comprehension_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/agents/graph_agent.py:GraphAgent",
+          "type": "class",
+          "label": "GraphAgent",
+          "path": ".github/agents/graph_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/graph_agent.py:analyze",
+          "type": "function",
+          "label": "analyze",
+          "path": ".github/agents/graph_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/agents/impact_agent.py:ImpactAgent",
+          "type": "class",
+          "label": "ImpactAgent",
+          "path": ".github/agents/impact_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/agents/impact_agent.py:analyze",
+          "type": "function",
+          "label": "analyze",
+          "path": ".github/agents/impact_agent.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/core/graph.py:nodes",
+          "type": "class",
+          "label": "nodes",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/core/graph.py:id",
+          "type": "class",
+          "label": "id",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:_normalize_node_id",
+          "type": "function",
+          "label": "_normalize_node_id",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:_extract_imported_module",
+          "type": "function",
+          "label": "_extract_imported_module",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:build_graph",
+          "type": "function",
+          "label": "build_graph",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:id",
+          "type": "function",
+          "label": "id",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:calls",
+          "type": "function",
+          "label": "calls",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:call",
+          "type": "function",
+          "label": "call",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:nodes",
+          "type": "function",
+          "label": "nodes",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:get_graph",
+          "type": "function",
+          "label": "get_graph",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/graph.py:find_dependents",
+          "type": "function",
+          "label": "find_dependents",
+          "path": ".github/core/graph.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/parser.py:_iter_source_files",
+          "type": "function",
+          "label": "_iter_source_files",
+          "path": ".github/core/parser.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/parser.py:parse_repository",
+          "type": "function",
+          "label": "parse_repository",
+          "path": ".github/core/parser.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/parser.py:get_parsed_results",
+          "type": "function",
+          "label": "get_parsed_results",
+          "path": ".github/core/parser.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/repository.py:load_repository",
+          "type": "function",
+          "label": "load_repository",
+          "path": ".github/core/repository.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/core/repository.py:validate_repository",
+          "type": "function",
+          "label": "validate_repository",
+          "path": ".github/core/repository.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:test_core_functions",
+          "type": "function",
+          "label": "test_core_functions",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:test_skills",
+          "type": "function",
+          "label": "test_skills",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:test_agents",
+          "type": "function",
+          "label": "test_agents",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:test_agent_runner",
+          "type": "function",
+          "label": "test_agent_runner",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:test_hooks",
+          "type": "function",
+          "label": "test_hooks",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:my_hook",
+          "type": "function",
+          "label": "my_hook",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:test_output_format",
+          "type": "function",
+          "label": "test_output_format",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/examples/test_system.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/examples/test_system.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/hooks/__init__.py:HookRegistry",
+          "type": "class",
+          "label": "HookRegistry",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/__init__.py:__init__",
+          "type": "function",
+          "label": "__init__",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/__init__.py:register",
+          "type": "function",
+          "label": "register",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/__init__.py:trigger",
+          "type": "function",
+          "label": "trigger",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/__init__.py:clear",
+          "type": "function",
+          "label": "clear",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/__init__.py:register",
+          "type": "function",
+          "label": "register",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/__init__.py:trigger",
+          "type": "function",
+          "label": "trigger",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/__init__.py:get_registry",
+          "type": "function",
+          "label": "get_registry",
+          "path": ".github/hooks/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/on_analysis_complete.py:on_analysis_complete",
+          "type": "function",
+          "label": "on_analysis_complete",
+          "path": ".github/hooks/on_analysis_complete.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/hooks/on_file_modified.py:on_file_modified",
+          "type": "function",
+          "label": "on_file_modified",
+          "path": ".github/hooks/on_file_modified.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/skills/__init__.py:SkillOutput",
+          "type": "class",
+          "label": "SkillOutput",
+          "path": ".github/skills/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "class:.github/skills/__init__.py:_DocumentationSkillProxy",
+          "type": "class",
+          "label": "_DocumentationSkillProxy",
+          "path": ".github/skills/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/__init__.py:__init__",
+          "type": "function",
+          "label": "__init__",
+          "path": ".github/skills/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/__init__.py:to_dict",
+          "type": "function",
+          "label": "to_dict",
+          "path": ".github/skills/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/__init__.py:save",
+          "type": "function",
+          "label": "save",
+          "path": ".github/skills/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/__init__.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/skills/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/__init__.py:ensure_analyzed",
+          "type": "function",
+          "label": "ensure_analyzed",
+          "path": ".github/skills/__init__.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/analyze_repo_skill.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/skills/analyze_repo_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/architecture_skill.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/skills/architecture_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/architecture_skill.py:classify_path",
+          "type": "function",
+          "label": "classify_path",
+          "path": ".github/skills/architecture_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/documentation_skill.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/skills/documentation_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/graph_skill.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/skills/graph_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/graph_skill.py:_build_visualization_html",
+          "type": "function",
+          "label": "_build_visualization_html",
+          "path": ".github/skills/graph_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/graph_skill.py:applyFilters",
+          "type": "function",
+          "label": "applyFilters",
+          "path": ".github/skills/graph_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/graph_skill.py:initNetwork",
+          "type": "function",
+          "label": "initNetwork",
+          "path": ".github/skills/graph_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/impact_skill.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/skills/impact_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:.github/skills/qna_skill.py:run",
+          "type": "function",
+          "label": "run",
+          "path": ".github/skills/qna_skill.py",
+          "language": "python"
+        },
+        {
+          "id": "function:agent_cli.py:_error_result",
+          "type": "function",
+          "label": "_error_result",
+          "path": "agent_cli.py",
+          "language": "python"
+        },
+        {
+          "id": "function:agent_cli.py:main",
+          "type": "function",
+          "label": "main",
+          "path": "agent_cli.py",
+          "language": "python"
+        },
+        {
+          "id": "class:docs/COMPLETION_SUMMARY.md:MyAgent",
+          "type": "class",
+          "label": "MyAgent",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/COMPLETION_SUMMARY.md:function\n\ndef",
+          "type": "function",
+          "label": "function\n\ndef",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/COMPLETION_SUMMARY.md:do_something",
+          "type": "function",
+          "label": "do_something",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/COMPLETION_SUMMARY.md:_execute_new_command",
+          "type": "function",
+          "label": "_execute_new_command",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/COMPLETION_SUMMARY.md:my_function",
+          "type": "function",
+          "label": "my_function",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/COMPLETION_SUMMARY.md:function\n__all__",
+          "type": "function",
+          "label": "function\n__all__",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/COMPLETION_SUMMARY.md:on_my_event",
+          "type": "function",
+          "label": "on_my_event",
+          "path": "docs/COMPLETION_SUMMARY.md",
+          "language": "document"
+        },
+        {
+          "id": "class:docs/HOW_TO_RUN.md:definitions",
+          "type": "class",
+          "label": "definitions",
+          "path": "docs/HOW_TO_RUN.md",
+          "language": "document"
+        },
+        {
+          "id": "class:docs/IMPLEMENTATION_GUIDE.md:MyAgent",
+          "type": "class",
+          "label": "MyAgent",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "class:docs/IMPLEMENTATION_GUIDE.md:MyAgent",
+          "type": "class",
+          "label": "MyAgent",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\ndef",
+          "type": "function",
+          "label": "function\n\ndef",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:do_something",
+          "type": "function",
+          "label": "do_something",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:my_hook",
+          "type": "function",
+          "label": "my_hook",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\ndef",
+          "type": "function",
+          "label": "function\n\ndef",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:my_command",
+          "type": "function",
+          "label": "my_command",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:_execute_my_command",
+          "type": "function",
+          "label": "_execute_my_command",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:my_function",
+          "type": "function",
+          "label": "my_function",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\n__all__",
+          "type": "function",
+          "label": "function\n\n__all__",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\ndef",
+          "type": "function",
+          "label": "function\n\ndef",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:on_my_event",
+          "type": "function",
+          "label": "on_my_event",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:run",
+          "type": "function",
+          "label": "run",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:run",
+          "type": "function",
+          "label": "run",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/IMPLEMENTATION_GUIDE.md:run",
+          "type": "function",
+          "label": "run",
+          "path": "docs/IMPLEMENTATION_GUIDE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/README.md:my_callback",
+          "type": "function",
+          "label": "my_callback",
+          "path": "docs/README.md",
+          "language": "document"
+        },
+        {
+          "id": "class:docs/START_HERE.md:MyAgent",
+          "type": "class",
+          "label": "MyAgent",
+          "path": "docs/START_HERE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/START_HERE.md:function\n\ndef",
+          "type": "function",
+          "label": "function\n\ndef",
+          "path": "docs/START_HERE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/START_HERE.md:do_something",
+          "type": "function",
+          "label": "do_something",
+          "path": "docs/START_HERE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/START_HERE.md:my_function",
+          "type": "function",
+          "label": "my_function",
+          "path": "docs/START_HERE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:docs/START_HERE.md:function\n__all__",
+          "type": "function",
+          "label": "function\n__all__",
+          "path": "docs/START_HERE.md",
+          "language": "document"
+        },
+        {
+          "id": "function:frontend/src/App.jsx:App",
+          "type": "function",
+          "label": "App",
+          "path": "frontend/src/App.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/Canvas.jsx:NodeCard",
+          "type": "function",
+          "label": "NodeCard",
+          "path": "frontend/src/components/Canvas.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/Canvas.jsx:Canvas",
+          "type": "function",
+          "label": "Canvas",
+          "path": "frontend/src/components/Canvas.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/Canvas.jsx:load",
+          "type": "function",
+          "label": "load",
+          "path": "frontend/src/components/Canvas.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/Dashboard.jsx:Dashboard",
+          "type": "function",
+          "label": "Dashboard",
+          "path": "frontend/src/components/Dashboard.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/Dashboard.jsx:handleGraphs",
+          "type": "function",
+          "label": "handleGraphs",
+          "path": "frontend/src/components/Dashboard.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/Dashboard.jsx:handleNodeSelected",
+          "type": "function",
+          "label": "handleNodeSelected",
+          "path": "frontend/src/components/Dashboard.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/ExplainPanel.jsx:ExplainPanel",
+          "type": "function",
+          "label": "ExplainPanel",
+          "path": "frontend/src/components/ExplainPanel.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/ExplainPanel.jsx:load",
+          "type": "function",
+          "label": "load",
+          "path": "frontend/src/components/ExplainPanel.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/FilePreview.jsx:FilePreview",
+          "type": "function",
+          "label": "FilePreview",
+          "path": "frontend/src/components/FilePreview.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/FilePreview.jsx:load",
+          "type": "function",
+          "label": "load",
+          "path": "frontend/src/components/FilePreview.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/GraphView.jsx:layoutNodes",
+          "type": "function",
+          "label": "layoutNodes",
+          "path": "frontend/src/components/GraphView.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/GraphView.jsx:GraphView",
+          "type": "function",
+          "label": "GraphView",
+          "path": "frontend/src/components/GraphView.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/RepoForm.jsx:RepoForm",
+          "type": "function",
+          "label": "RepoForm",
+          "path": "frontend/src/components/RepoForm.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/RepoForm.jsx:repoNameFromUrl",
+          "type": "function",
+          "label": "repoNameFromUrl",
+          "path": "frontend/src/components/RepoForm.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/RepoForm.jsx:handleClone",
+          "type": "function",
+          "label": "handleClone",
+          "path": "frontend/src/components/RepoForm.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/RepoForm.jsx:pollFallback",
+          "type": "function",
+          "label": "pollFallback",
+          "path": "frontend/src/components/RepoForm.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "function:frontend/src/components/Sidebar.jsx:Sidebar",
+          "type": "function",
+          "label": "Sidebar",
+          "path": "frontend/src/components/Sidebar.jsx",
+          "language": "javascript"
+        },
+        {
+          "id": "class:tests/test_agents.py:Demo",
+          "type": "class",
+          "label": "Demo",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:github_package_path",
+          "type": "function",
+          "label": "github_package_path",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_comprehension_agent_analyze_returns_skill_output",
+          "type": "function",
+          "label": "test_comprehension_agent_analyze_returns_skill_output",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_comprehension_agent_ask_returns_skill_output",
+          "type": "function",
+          "label": "test_comprehension_agent_ask_returns_skill_output",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_comprehension_agent_analyze_invalid_output_raises",
+          "type": "function",
+          "label": "test_comprehension_agent_analyze_invalid_output_raises",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_architecture_agent_analyze_returns_skill_output",
+          "type": "function",
+          "label": "test_architecture_agent_analyze_returns_skill_output",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_impact_agent_analyze_returns_skill_output",
+          "type": "function",
+          "label": "test_impact_agent_analyze_returns_skill_output",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_graph_agent_analyze_returns_skill_output",
+          "type": "function",
+          "label": "test_graph_agent_analyze_returns_skill_output",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_agent_runner_routes_each_slash_command",
+          "type": "function",
+          "label": "test_agent_runner_routes_each_slash_command",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_agent_runner_returns_error_for_invalid_commands",
+          "type": "function",
+          "label": "test_agent_runner_returns_error_for_invalid_commands",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_cli_main_supports_each_slash_command",
+          "type": "function",
+          "label": "test_cli_main_supports_each_slash_command",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_core_modules_work_without_backend_dependency",
+          "type": "function",
+          "label": "test_core_modules_work_without_backend_dependency",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:run",
+          "type": "function",
+          "label": "run",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:helper",
+          "type": "function",
+          "label": "helper",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_impact_skill_traces_dependencies",
+          "type": "function",
+          "label": "test_impact_skill_traces_dependencies",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:helper",
+          "type": "function",
+          "label": "helper",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_documentation_skill_generates_markdown",
+          "type": "function",
+          "label": "test_documentation_skill_generates_markdown",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:run",
+          "type": "function",
+          "label": "run",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:test_build_graph_saves_knowledge_graph",
+          "type": "function",
+          "label": "test_build_graph_saves_knowledge_graph",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_agents.py:helper",
+          "type": "function",
+          "label": "helper",
+          "path": "tests/test_agents.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_jobs_and_explain.py:test_job_lifecycle_and_explain",
+          "type": "function",
+          "label": "test_job_lifecycle_and_explain",
+          "path": "tests/test_jobs_and_explain.py",
+          "language": "python"
+        },
+        {
+          "id": "function:tests/test_jobs_and_explain.py:foo",
+          "type": "function",
+          "label": "foo",
+          "path": "tests/test_jobs_and_explain.py",
+          "language": "python"
+        }
+      ],
+      "edges": [
+        {
+          "id": "edge0",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "class:.github/agents/agent_runner.py:AgentRunner",
+          "type": "contains"
+        },
+        {
+          "id": "edge1",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:__init__",
+          "type": "contains"
+        },
+        {
+          "id": "edge2",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge3",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_execute_analyze",
+          "type": "contains"
+        },
+        {
+          "id": "edge4",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_execute_architecture",
+          "type": "contains"
+        },
+        {
+          "id": "edge5",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_execute_impact",
+          "type": "contains"
+        },
+        {
+          "id": "edge6",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_execute_ask",
+          "type": "contains"
+        },
+        {
+          "id": "edge7",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_execute_docs",
+          "type": "contains"
+        },
+        {
+          "id": "edge8",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_execute_graph",
+          "type": "contains"
+        },
+        {
+          "id": "edge9",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_format_result",
+          "type": "contains"
+        },
+        {
+          "id": "edge10",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_error",
+          "type": "contains"
+        },
+        {
+          "id": "edge11",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:_save_output",
+          "type": "contains"
+        },
+        {
+          "id": "edge12",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:run_agent",
+          "type": "contains"
+        },
+        {
+          "id": "edge13",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "function:.github/agents/agent_runner.py:get_runner",
+          "type": "contains"
+        },
+        {
+          "id": "edge14",
+          "source": "file:.github/agents/architecture_agent.py",
+          "target": "class:.github/agents/architecture_agent.py:ArchitectureAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge15",
+          "source": "file:.github/agents/architecture_agent.py",
+          "target": "function:.github/agents/architecture_agent.py:analyze",
+          "type": "contains"
+        },
+        {
+          "id": "edge16",
+          "source": "file:.github/agents/comprehension_agent.py",
+          "target": "class:.github/agents/comprehension_agent.py:ComprehensionAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge17",
+          "source": "file:.github/agents/comprehension_agent.py",
+          "target": "function:.github/agents/comprehension_agent.py:analyze",
+          "type": "contains"
+        },
+        {
+          "id": "edge18",
+          "source": "file:.github/agents/comprehension_agent.py",
+          "target": "function:.github/agents/comprehension_agent.py:ask",
+          "type": "contains"
+        },
+        {
+          "id": "edge19",
+          "source": "file:.github/agents/graph_agent.py",
+          "target": "class:.github/agents/graph_agent.py:GraphAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge20",
+          "source": "file:.github/agents/graph_agent.py",
+          "target": "function:.github/agents/graph_agent.py:analyze",
+          "type": "contains"
+        },
+        {
+          "id": "edge21",
+          "source": "file:.github/agents/impact_agent.py",
+          "target": "class:.github/agents/impact_agent.py:ImpactAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge22",
+          "source": "file:.github/agents/impact_agent.py",
+          "target": "function:.github/agents/impact_agent.py:analyze",
+          "type": "contains"
+        },
+        {
+          "id": "edge23",
+          "source": "file:.github/core/graph.py",
+          "target": "class:.github/core/graph.py:nodes",
+          "type": "contains"
+        },
+        {
+          "id": "edge24",
+          "source": "file:.github/core/graph.py",
+          "target": "class:.github/core/graph.py:id",
+          "type": "contains"
+        },
+        {
+          "id": "edge25",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:_normalize_node_id",
+          "type": "contains"
+        },
+        {
+          "id": "edge26",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:_extract_imported_module",
+          "type": "contains"
+        },
+        {
+          "id": "edge27",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:build_graph",
+          "type": "contains"
+        },
+        {
+          "id": "edge28",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:id",
+          "type": "contains"
+        },
+        {
+          "id": "edge29",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:calls",
+          "type": "contains"
+        },
+        {
+          "id": "edge30",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:call",
+          "type": "contains"
+        },
+        {
+          "id": "edge31",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:nodes",
+          "type": "contains"
+        },
+        {
+          "id": "edge32",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:get_graph",
+          "type": "contains"
+        },
+        {
+          "id": "edge33",
+          "source": "file:.github/core/graph.py",
+          "target": "function:.github/core/graph.py:find_dependents",
+          "type": "contains"
+        },
+        {
+          "id": "edge34",
+          "source": "file:.github/core/parser.py",
+          "target": "function:.github/core/parser.py:_iter_source_files",
+          "type": "contains"
+        },
+        {
+          "id": "edge35",
+          "source": "file:.github/core/parser.py",
+          "target": "function:.github/core/parser.py:parse_repository",
+          "type": "contains"
+        },
+        {
+          "id": "edge36",
+          "source": "file:.github/core/parser.py",
+          "target": "function:.github/core/parser.py:get_parsed_results",
+          "type": "contains"
+        },
+        {
+          "id": "edge37",
+          "source": "file:.github/core/repository.py",
+          "target": "function:.github/core/repository.py:load_repository",
+          "type": "contains"
+        },
+        {
+          "id": "edge38",
+          "source": "file:.github/core/repository.py",
+          "target": "function:.github/core/repository.py:validate_repository",
+          "type": "contains"
+        },
+        {
+          "id": "edge39",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:test_core_functions",
+          "type": "contains"
+        },
+        {
+          "id": "edge40",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:test_skills",
+          "type": "contains"
+        },
+        {
+          "id": "edge41",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:test_agents",
+          "type": "contains"
+        },
+        {
+          "id": "edge42",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:test_agent_runner",
+          "type": "contains"
+        },
+        {
+          "id": "edge43",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:test_hooks",
+          "type": "contains"
+        },
+        {
+          "id": "edge44",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:my_hook",
+          "type": "contains"
+        },
+        {
+          "id": "edge45",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:test_output_format",
+          "type": "contains"
+        },
+        {
+          "id": "edge46",
+          "source": "file:.github/examples/test_system.py",
+          "target": "function:.github/examples/test_system.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge47",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "class:.github/hooks/__init__.py:HookRegistry",
+          "type": "contains"
+        },
+        {
+          "id": "edge48",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "function:.github/hooks/__init__.py:__init__",
+          "type": "contains"
+        },
+        {
+          "id": "edge49",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "function:.github/hooks/__init__.py:register",
+          "type": "contains"
+        },
+        {
+          "id": "edge50",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "function:.github/hooks/__init__.py:trigger",
+          "type": "contains"
+        },
+        {
+          "id": "edge51",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "function:.github/hooks/__init__.py:clear",
+          "type": "contains"
+        },
+        {
+          "id": "edge52",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "function:.github/hooks/__init__.py:register",
+          "type": "contains"
+        },
+        {
+          "id": "edge53",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "function:.github/hooks/__init__.py:trigger",
+          "type": "contains"
+        },
+        {
+          "id": "edge54",
+          "source": "file:.github/hooks/__init__.py",
+          "target": "function:.github/hooks/__init__.py:get_registry",
+          "type": "contains"
+        },
+        {
+          "id": "edge55",
+          "source": "file:.github/hooks/on_analysis_complete.py",
+          "target": "function:.github/hooks/on_analysis_complete.py:on_analysis_complete",
+          "type": "contains"
+        },
+        {
+          "id": "edge56",
+          "source": "file:.github/hooks/on_file_modified.py",
+          "target": "function:.github/hooks/on_file_modified.py:on_file_modified",
+          "type": "contains"
+        },
+        {
+          "id": "edge57",
+          "source": "file:.github/skills/__init__.py",
+          "target": "class:.github/skills/__init__.py:SkillOutput",
+          "type": "contains"
+        },
+        {
+          "id": "edge58",
+          "source": "file:.github/skills/__init__.py",
+          "target": "class:.github/skills/__init__.py:_DocumentationSkillProxy",
+          "type": "contains"
+        },
+        {
+          "id": "edge59",
+          "source": "file:.github/skills/__init__.py",
+          "target": "function:.github/skills/__init__.py:__init__",
+          "type": "contains"
+        },
+        {
+          "id": "edge60",
+          "source": "file:.github/skills/__init__.py",
+          "target": "function:.github/skills/__init__.py:to_dict",
+          "type": "contains"
+        },
+        {
+          "id": "edge61",
+          "source": "file:.github/skills/__init__.py",
+          "target": "function:.github/skills/__init__.py:save",
+          "type": "contains"
+        },
+        {
+          "id": "edge62",
+          "source": "file:.github/skills/__init__.py",
+          "target": "function:.github/skills/__init__.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge63",
+          "source": "file:.github/skills/__init__.py",
+          "target": "function:.github/skills/__init__.py:ensure_analyzed",
+          "type": "contains"
+        },
+        {
+          "id": "edge64",
+          "source": "file:.github/skills/analyze_repo_skill.py",
+          "target": "function:.github/skills/analyze_repo_skill.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge65",
+          "source": "file:.github/skills/architecture_skill.py",
+          "target": "function:.github/skills/architecture_skill.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge66",
+          "source": "file:.github/skills/architecture_skill.py",
+          "target": "function:.github/skills/architecture_skill.py:classify_path",
+          "type": "contains"
+        },
+        {
+          "id": "edge67",
+          "source": "file:.github/skills/documentation_skill.py",
+          "target": "function:.github/skills/documentation_skill.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge68",
+          "source": "file:.github/skills/graph_skill.py",
+          "target": "function:.github/skills/graph_skill.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge69",
+          "source": "file:.github/skills/graph_skill.py",
+          "target": "function:.github/skills/graph_skill.py:_build_visualization_html",
+          "type": "contains"
+        },
+        {
+          "id": "edge70",
+          "source": "file:.github/skills/graph_skill.py",
+          "target": "function:.github/skills/graph_skill.py:applyFilters",
+          "type": "contains"
+        },
+        {
+          "id": "edge71",
+          "source": "file:.github/skills/graph_skill.py",
+          "target": "function:.github/skills/graph_skill.py:initNetwork",
+          "type": "contains"
+        },
+        {
+          "id": "edge72",
+          "source": "file:.github/skills/impact_skill.py",
+          "target": "function:.github/skills/impact_skill.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge73",
+          "source": "file:.github/skills/qna_skill.py",
+          "target": "function:.github/skills/qna_skill.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge74",
+          "source": "file:agent_cli.py",
+          "target": "function:agent_cli.py:_error_result",
+          "type": "contains"
+        },
+        {
+          "id": "edge75",
+          "source": "file:agent_cli.py",
+          "target": "function:agent_cli.py:main",
+          "type": "contains"
+        },
+        {
+          "id": "edge76",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "class:docs/COMPLETION_SUMMARY.md:MyAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge77",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "function:docs/COMPLETION_SUMMARY.md:function\n\ndef",
+          "type": "contains"
+        },
+        {
+          "id": "edge78",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "function:docs/COMPLETION_SUMMARY.md:do_something",
+          "type": "contains"
+        },
+        {
+          "id": "edge79",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "function:docs/COMPLETION_SUMMARY.md:_execute_new_command",
+          "type": "contains"
+        },
+        {
+          "id": "edge80",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "function:docs/COMPLETION_SUMMARY.md:my_function",
+          "type": "contains"
+        },
+        {
+          "id": "edge81",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "function:docs/COMPLETION_SUMMARY.md:function\n__all__",
+          "type": "contains"
+        },
+        {
+          "id": "edge82",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "function:docs/COMPLETION_SUMMARY.md:on_my_event",
+          "type": "contains"
+        },
+        {
+          "id": "edge83",
+          "source": "file:docs/HOW_TO_RUN.md",
+          "target": "class:docs/HOW_TO_RUN.md:definitions",
+          "type": "contains"
+        },
+        {
+          "id": "edge84",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "class:docs/IMPLEMENTATION_GUIDE.md:MyAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge85",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "class:docs/IMPLEMENTATION_GUIDE.md:MyAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge86",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\ndef",
+          "type": "contains"
+        },
+        {
+          "id": "edge87",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:do_something",
+          "type": "contains"
+        },
+        {
+          "id": "edge88",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:my_hook",
+          "type": "contains"
+        },
+        {
+          "id": "edge89",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\ndef",
+          "type": "contains"
+        },
+        {
+          "id": "edge90",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:my_command",
+          "type": "contains"
+        },
+        {
+          "id": "edge91",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:_execute_my_command",
+          "type": "contains"
+        },
+        {
+          "id": "edge92",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:my_function",
+          "type": "contains"
+        },
+        {
+          "id": "edge93",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\n__all__",
+          "type": "contains"
+        },
+        {
+          "id": "edge94",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:function\n\ndef",
+          "type": "contains"
+        },
+        {
+          "id": "edge95",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:on_my_event",
+          "type": "contains"
+        },
+        {
+          "id": "edge96",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge97",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge98",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "function:docs/IMPLEMENTATION_GUIDE.md:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge99",
+          "source": "file:docs/README.md",
+          "target": "function:docs/README.md:my_callback",
+          "type": "contains"
+        },
+        {
+          "id": "edge100",
+          "source": "file:docs/START_HERE.md",
+          "target": "class:docs/START_HERE.md:MyAgent",
+          "type": "contains"
+        },
+        {
+          "id": "edge101",
+          "source": "file:docs/START_HERE.md",
+          "target": "function:docs/START_HERE.md:function\n\ndef",
+          "type": "contains"
+        },
+        {
+          "id": "edge102",
+          "source": "file:docs/START_HERE.md",
+          "target": "function:docs/START_HERE.md:do_something",
+          "type": "contains"
+        },
+        {
+          "id": "edge103",
+          "source": "file:docs/START_HERE.md",
+          "target": "function:docs/START_HERE.md:my_function",
+          "type": "contains"
+        },
+        {
+          "id": "edge104",
+          "source": "file:docs/START_HERE.md",
+          "target": "function:docs/START_HERE.md:function\n__all__",
+          "type": "contains"
+        },
+        {
+          "id": "edge105",
+          "source": "file:frontend/src/App.jsx",
+          "target": "function:frontend/src/App.jsx:App",
+          "type": "contains"
+        },
+        {
+          "id": "edge106",
+          "source": "file:frontend/src/components/Canvas.jsx",
+          "target": "function:frontend/src/components/Canvas.jsx:NodeCard",
+          "type": "contains"
+        },
+        {
+          "id": "edge107",
+          "source": "file:frontend/src/components/Canvas.jsx",
+          "target": "function:frontend/src/components/Canvas.jsx:Canvas",
+          "type": "contains"
+        },
+        {
+          "id": "edge108",
+          "source": "file:frontend/src/components/Canvas.jsx",
+          "target": "function:frontend/src/components/Canvas.jsx:load",
+          "type": "contains"
+        },
+        {
+          "id": "edge109",
+          "source": "file:frontend/src/components/Dashboard.jsx",
+          "target": "function:frontend/src/components/Dashboard.jsx:Dashboard",
+          "type": "contains"
+        },
+        {
+          "id": "edge110",
+          "source": "file:frontend/src/components/Dashboard.jsx",
+          "target": "function:frontend/src/components/Dashboard.jsx:handleGraphs",
+          "type": "contains"
+        },
+        {
+          "id": "edge111",
+          "source": "file:frontend/src/components/Dashboard.jsx",
+          "target": "function:frontend/src/components/Dashboard.jsx:handleNodeSelected",
+          "type": "contains"
+        },
+        {
+          "id": "edge112",
+          "source": "file:frontend/src/components/ExplainPanel.jsx",
+          "target": "function:frontend/src/components/ExplainPanel.jsx:ExplainPanel",
+          "type": "contains"
+        },
+        {
+          "id": "edge113",
+          "source": "file:frontend/src/components/ExplainPanel.jsx",
+          "target": "function:frontend/src/components/ExplainPanel.jsx:load",
+          "type": "contains"
+        },
+        {
+          "id": "edge114",
+          "source": "file:frontend/src/components/FilePreview.jsx",
+          "target": "function:frontend/src/components/FilePreview.jsx:FilePreview",
+          "type": "contains"
+        },
+        {
+          "id": "edge115",
+          "source": "file:frontend/src/components/FilePreview.jsx",
+          "target": "function:frontend/src/components/FilePreview.jsx:load",
+          "type": "contains"
+        },
+        {
+          "id": "edge116",
+          "source": "file:frontend/src/components/GraphView.jsx",
+          "target": "function:frontend/src/components/GraphView.jsx:layoutNodes",
+          "type": "contains"
+        },
+        {
+          "id": "edge117",
+          "source": "file:frontend/src/components/GraphView.jsx",
+          "target": "function:frontend/src/components/GraphView.jsx:GraphView",
+          "type": "contains"
+        },
+        {
+          "id": "edge118",
+          "source": "file:frontend/src/components/RepoForm.jsx",
+          "target": "function:frontend/src/components/RepoForm.jsx:RepoForm",
+          "type": "contains"
+        },
+        {
+          "id": "edge119",
+          "source": "file:frontend/src/components/RepoForm.jsx",
+          "target": "function:frontend/src/components/RepoForm.jsx:repoNameFromUrl",
+          "type": "contains"
+        },
+        {
+          "id": "edge120",
+          "source": "file:frontend/src/components/RepoForm.jsx",
+          "target": "function:frontend/src/components/RepoForm.jsx:handleClone",
+          "type": "contains"
+        },
+        {
+          "id": "edge121",
+          "source": "file:frontend/src/components/RepoForm.jsx",
+          "target": "function:frontend/src/components/RepoForm.jsx:pollFallback",
+          "type": "contains"
+        },
+        {
+          "id": "edge122",
+          "source": "file:frontend/src/components/Sidebar.jsx",
+          "target": "function:frontend/src/components/Sidebar.jsx:Sidebar",
+          "type": "contains"
+        },
+        {
+          "id": "edge123",
+          "source": "file:tests/test_agents.py",
+          "target": "class:tests/test_agents.py:Demo",
+          "type": "contains"
+        },
+        {
+          "id": "edge124",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:github_package_path",
+          "type": "contains"
+        },
+        {
+          "id": "edge125",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_comprehension_agent_analyze_returns_skill_output",
+          "type": "contains"
+        },
+        {
+          "id": "edge126",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_comprehension_agent_ask_returns_skill_output",
+          "type": "contains"
+        },
+        {
+          "id": "edge127",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_comprehension_agent_analyze_invalid_output_raises",
+          "type": "contains"
+        },
+        {
+          "id": "edge128",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_architecture_agent_analyze_returns_skill_output",
+          "type": "contains"
+        },
+        {
+          "id": "edge129",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_impact_agent_analyze_returns_skill_output",
+          "type": "contains"
+        },
+        {
+          "id": "edge130",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_graph_agent_analyze_returns_skill_output",
+          "type": "contains"
+        },
+        {
+          "id": "edge131",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_agent_runner_routes_each_slash_command",
+          "type": "contains"
+        },
+        {
+          "id": "edge132",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_agent_runner_returns_error_for_invalid_commands",
+          "type": "contains"
+        },
+        {
+          "id": "edge133",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_cli_main_supports_each_slash_command",
+          "type": "contains"
+        },
+        {
+          "id": "edge134",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_core_modules_work_without_backend_dependency",
+          "type": "contains"
+        },
+        {
+          "id": "edge135",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge136",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:helper",
+          "type": "contains"
+        },
+        {
+          "id": "edge137",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_impact_skill_traces_dependencies",
+          "type": "contains"
+        },
+        {
+          "id": "edge138",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:helper",
+          "type": "contains"
+        },
+        {
+          "id": "edge139",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_documentation_skill_generates_markdown",
+          "type": "contains"
+        },
+        {
+          "id": "edge140",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:run",
+          "type": "contains"
+        },
+        {
+          "id": "edge141",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:test_build_graph_saves_knowledge_graph",
+          "type": "contains"
+        },
+        {
+          "id": "edge142",
+          "source": "file:tests/test_agents.py",
+          "target": "function:tests/test_agents.py:helper",
+          "type": "contains"
+        },
+        {
+          "id": "edge143",
+          "source": "file:tests/test_jobs_and_explain.py",
+          "target": "function:tests/test_jobs_and_explain.py:test_job_lifecycle_and_explain",
+          "type": "contains"
+        },
+        {
+          "id": "edge144",
+          "source": "file:tests/test_jobs_and_explain.py",
+          "target": "function:tests/test_jobs_and_explain.py:foo",
+          "type": "contains"
+        },
+        {
+          "id": "edge145",
+          "source": "file:.github/agents/__init__.py",
+          "target": "file:.github/agents/agent_runner.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge146",
+          "source": "file:.github/agents/__init__.py",
+          "target": "file:.github/agents/comprehension_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge147",
+          "source": "file:.github/agents/__init__.py",
+          "target": "file:.github/agents/architecture_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge148",
+          "source": "file:.github/agents/__init__.py",
+          "target": "file:.github/agents/impact_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge149",
+          "source": "file:.github/agents/__init__.py",
+          "target": "file:.github/agents/graph_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge150",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "file:.github/agents/comprehension_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge151",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "file:.github/agents/architecture_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge152",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "file:.github/agents/impact_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge153",
+          "source": "file:.github/agents/agent_runner.py",
+          "target": "file:.github/agents/graph_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge154",
+          "source": "file:.github/core/__init__.py",
+          "target": "file:.github/core/parser.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge155",
+          "source": "file:.github/core/__init__.py",
+          "target": "file:.github/core/graph.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge156",
+          "source": "file:.github/core/__init__.py",
+          "target": "file:.github/core/repository.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge157",
+          "source": "file:.github/core/graph.py",
+          "target": "file:.github/core/parser.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge158",
+          "source": "file:.github/examples/test_system.py",
+          "target": "file:.github/agents/comprehension_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge159",
+          "source": "file:.github/examples/test_system.py",
+          "target": "file:.github/agents/architecture_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge160",
+          "source": "file:.github/examples/test_system.py",
+          "target": "file:.github/agents/agent_runner.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge161",
+          "source": "file:.github/hooks/on_analysis_complete.py",
+          "target": "file:.github/agents/agent_runner.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge162",
+          "source": "file:.github/hooks/on_file_modified.py",
+          "target": "file:.github/agents/agent_runner.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge163",
+          "source": "file:.github/skills/__init__.py",
+          "target": "file:.github/skills/documentation_skill.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge164",
+          "source": "file:.github/skills/__init__.py",
+          "target": "file:.github/core/parser.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge165",
+          "source": "file:.github/skills/__init__.py",
+          "target": "file:.github/core/graph.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge166",
+          "source": "file:.github/skills/__init__.py",
+          "target": "file:.github/core/repository.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge167",
+          "source": "file:agent_cli.py",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge168",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge169",
+          "source": "file:docs/COMPLETION_SUMMARY.md",
+          "target": "file:frontend/src/App.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge170",
+          "source": "file:docs/HOW_TO_RUN.md",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge171",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge172",
+          "source": "file:docs/IMPLEMENTATION_GUIDE.md",
+          "target": "file:frontend/src/App.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge173",
+          "source": "file:docs/QUICK_REFERENCE.md",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge174",
+          "source": "file:docs/README.md",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge175",
+          "source": "file:docs/START_HERE.md",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge176",
+          "source": "file:docs/START_HERE.md",
+          "target": "file:frontend/src/App.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge177",
+          "source": "file:frontend/src/App.jsx",
+          "target": "file:frontend/src/components/Sidebar.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge178",
+          "source": "file:frontend/src/App.jsx",
+          "target": "file:frontend/src/components/Dashboard.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge179",
+          "source": "file:frontend/src/components/Dashboard.jsx",
+          "target": "file:frontend/src/components/RepoForm.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge180",
+          "source": "file:frontend/src/components/Dashboard.jsx",
+          "target": "file:frontend/src/components/GraphView.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge181",
+          "source": "file:frontend/src/components/Dashboard.jsx",
+          "target": "file:frontend/src/components/ExplainPanel.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge182",
+          "source": "file:frontend/src/components/Dashboard.jsx",
+          "target": "file:frontend/src/components/FilePreview.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge183",
+          "source": "file:frontend/src/main.jsx",
+          "target": "file:frontend/src/App.jsx",
+          "type": "imports"
+        },
+        {
+          "id": "edge184",
+          "source": "file:tests/test_agents.py",
+          "target": "file:.github/agents/comprehension_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge185",
+          "source": "file:tests/test_agents.py",
+          "target": "file:.github/agents/architecture_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge186",
+          "source": "file:tests/test_agents.py",
+          "target": "file:.github/agents/impact_agent.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge187",
+          "source": "file:tests/test_agents.py",
+          "target": "file:.github/agents/AGENTS.md",
+          "type": "imports"
+        },
+        {
+          "id": "edge188",
+          "source": "file:tests/test_agents.py",
+          "target": "file:agent_cli.py",
+          "type": "imports"
+        },
+        {
+          "id": "edge189",
+          "source": "file:tests/test_jobs_and_explain.py",
+          "target": "file:frontend/src/main.jsx",
+          "type": "imports"
+        }
+      ]
+    },
+    "json_path": "F:\\Projects\\Capstone 2\\analysis-outputs\\knowledge-graph.json",
+    "html_path": "F:\\Projects\\Capstone 2\\analysis-outputs\\knowledge-graph.html"
+  },
+  "evidence": [
+    "Graph saved to F:\\Projects\\Capstone 2\\analysis-outputs\\knowledge-graph.json",
+    "Visualization saved to F:\\Projects\\Capstone 2\\analysis-outputs\\knowledge-graph.html"
+  ]
+}

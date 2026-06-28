@@ -75,15 +75,107 @@ def parse_repository(repo_path: str) -> dict[str, Any]:
                 content = file_path.read_text(encoding="utf-8", errors="ignore")
             except OSError:
                 continue
+            # Language detection based on extension (deterministic)
+            ext = file_path.suffix.lower()
+            lang_map = {
+                ".py": "python",
+                ".js": "javascript",
+                ".jsx": "javascript",
+                ".ts": "javascript",
+                ".tsx": "javascript",
+                ".go": "go",
+                ".java": "java",
+                ".json": "config",
+                ".yml": "config",
+                ".yaml": "config",
+                ".md": "document",
+            }
+            language = lang_map.get(ext, "generic")
 
-            classes = [line.strip() for line in content.splitlines() if line.lstrip().startswith("class ")]
-            functions = [line.strip() for line in content.splitlines() if line.lstrip().startswith("def ")]
-            imports = [line.strip() for line in content.splitlines() if line.lstrip().startswith(("import ", "from "))]
+            imports: list[str] = []
+            classes: list[str] = []
+            functions: list[str] = []
+
+            # Use AST parsing for Python files to get accurate symbols and imports
+            if language == "python":
+                try:
+                    import ast
+
+                    tree = ast.parse(content)
+                    for node in ast.walk(tree):
+                        if isinstance(node, ast.Import):
+                            for n in node.names:
+                                # e.g., import a.b as c -> store 'a.b'
+                                if n.name:
+                                    imports.append(n.name)
+                        elif isinstance(node, ast.ImportFrom):
+                            # node.module may be None for relative imports
+                            mod = node.module or ""
+                            # level indicates relative import (number of leading dots)
+                            level = getattr(node, "level", 0)
+                            for n in node.names:
+                                # prefer full dotted name like a.b.c when possible
+                                if mod:
+                                    imports.append(f"{'.'*level}{mod}.{n.name}" if level else f"{mod}.{n.name}")
+                                    # also include base module
+                                    imports.append(f"{'.'*level}{mod}" if level else f"{mod}")
+                                else:
+                                    # relative import like from . import x
+                                    imports.append(f"{'.'*level}{n.name}")
+                        elif isinstance(node, ast.FunctionDef) or isinstance(node, ast.AsyncFunctionDef):
+                            functions.append(node.name)
+                        elif isinstance(node, ast.ClassDef):
+                            classes.append(node.name)
+                except Exception:
+                    # fall back to lightweight regex if AST fails
+                    import re
+
+                    for m in re.finditer(r"class\s+([A-Za-z_][A-Za-z0-9_]*)", content):
+                        classes.append(m.group(1))
+                    for m in re.finditer(r"(?:def|function|func)\s+([A-Za-z_][A-Za-z0-9_]*)", content):
+                        functions.append(m.group(1))
+                    import_patterns = [
+                        re.compile(r"^\s*from\s+([A-Za-z0-9_.\-/]+)\s+import"),
+                        re.compile(r"^\s*import\s+([A-Za-z0-9_.\-/]+)"),
+                    ]
+                    for line in content.splitlines():
+                        for pat in import_patterns:
+                            m = pat.search(line)
+                            if m:
+                                imports.append(m.group(1))
+                                break
+            else:
+                # Skip symbol extraction for documentation and text files
+                if ext in {".md", ".txt"}:
+                    imports = []
+                    classes = []
+                    functions = []
+                else:
+                    # fallback regex-based extraction for other languages
+                    import re
+
+                    import_patterns = [
+                        re.compile(r"^\s*from\s+([A-Za-z0-9_./\-]+)\s+import"),
+                        re.compile(r"^\s*import\s+([A-Za-z0-9_./\-]+)"),
+                        re.compile(r"import\s+.*from\s+[\'\"]([^\"\']+)[\'\"]"),
+                        re.compile(r"require\(\s*[\'\"]([^\"\']+)[\'\"]\s*\)"),
+                        re.compile(r"^\s*import\s+[\'\"]([^\"\']+)[\'\"]"),
+                    ]
+                    for line in content.splitlines():
+                        for pat in import_patterns:
+                            m = pat.search(line)
+                            if m:
+                                imports.append(m.group(1) if m.groups() else line.strip())
+                                break
+                    for m in re.finditer(r"class\s+([A-Za-z_][A-Za-z0-9_]*)", content):
+                        classes.append(m.group(1))
+                    for m in re.finditer(r"(?:def|function|func)\s+([A-Za-z_][A-Za-z0-9_]*)", content):
+                        functions.append(m.group(1))
 
             files.append(
                 {
-                    "file_path": str(file_path.relative_to(repository_path)),
-                    "language": file_path.suffix.lower().lstrip("."),
+                    "file_path": Path(file_path.relative_to(repository_path)).as_posix(),
+                    "language": language,
                     "classes": len(classes),
                     "functions": len(functions),
                     "imports": len(imports),
@@ -93,6 +185,7 @@ def parse_repository(repo_path: str) -> dict[str, Any]:
                         "functions": functions,
                         "imports": imports,
                         "methods": [],
+                        "raw_content": content,
                     },
                 }
             )

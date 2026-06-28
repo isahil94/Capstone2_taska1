@@ -58,32 +58,90 @@ def run(repo_path: str) -> SkillOutput:
 
 def _build_visualization_html(graph_data: dict) -> str:
     """Create a lightweight HTML page that renders the graph with vis-network."""
+    # Store original nodes with all metadata
+    raw_nodes = graph_data.get("nodes", [])
+    raw_edges = graph_data.get("edges", [])
+
+    # Prepare nodes for vis-network (id and label only)
+    nodes_data = [
+        {
+            "id": node.get("id"),
+            "label": node.get("label", node.get("id", "")),
+            "type": node.get("type", ""),
+        }
+        for node in raw_nodes
+    ]
+
+    # Prepare edges for vis-network (source/target to from/to)
+    edges_data = [
+        {
+            "from": edge.get("source"),
+            "to": edge.get("target"),
+            "arrows": "to",
+        }
+        for edge in raw_edges
+    ]
+
     return f"""<!DOCTYPE html>
 <html>
 <head>
   <title>Knowledge Graph</title>
   <script type=\"text/javascript\" src=\"https://unpkg.com/vis-network/standalone/umd/vis-network.min.js\"></script>
   <style>
+    body {{ font-family: Arial, sans-serif; margin: 0; padding: 10px; }}
+    #controls {{
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }}
+    .control-item {{
+      display: inline-block;
+      margin-right: 20px;
+    }}
     #network {{
       width: 100%;
       height: 800px;
       border: 1px solid lightgray;
+      border-radius: 4px;
     }}
   </style>
 </head>
 <body>
 
 <h2>Knowledge Graph</h2>
+
+<div id=\"controls\">
+  <div class=\"control-item\">
+    <label>
+      <input type=\"checkbox\" id=\"hideInit\">
+      Hide __init__.py
+    </label>
+  </div>
+  <div class=\"control-item\">
+    <label>
+      <input type=\"checkbox\" id=\"onlyConnected\">
+      Only Connected Nodes
+    </label>
+  </div>
+  <div class=\"control-item\">
+    <label>
+      <input type=\"checkbox\" id=\"onlyFiles\">
+      Only File Nodes
+    </label>
+  </div>
+</div>
+
 <div id=\"network\"></div>
 
 <script>
-  const nodes = new vis.DataSet({json.dumps(graph_data.get('nodes', []))});
-  const edges = new vis.DataSet({json.dumps(graph_data.get('edges', []))});
-
-  const container = document.getElementById('network');
-  const data = {{ nodes: nodes, edges: edges }};
+  // Store original data
+  const rawNodes = {json.dumps(nodes_data)};
+  const rawEdges = {json.dumps(edges_data)};
   
-  const options = {{
+  let network;
+  let container = document.getElementById('network');
+  let options = {{
     nodes: {{
       shape: 'dot',
       size: 10
@@ -92,11 +150,79 @@ def _build_visualization_html(graph_data: dict) -> str:
       arrows: 'to'
     }},
     physics: {{
-      stabilization: false
+      stabilization: true,
+      stabilization: {{ iterations: 200 }}
     }}
   }};
 
-  new vis.Network(container, data, options);
+  // Filter and update graph
+  function applyFilters() {{
+    const hideInit = document.getElementById('hideInit').checked;
+    const onlyConnected = document.getElementById('onlyConnected').checked;
+    const onlyFiles = document.getElementById('onlyFiles').checked;
+
+    // Filter nodes
+    let filteredNodes = rawNodes.filter(node => {{
+      // Rule 1: Hide __init__.py if checked
+      if (hideInit && node.label && node.label.includes('__init__')) {{
+        return false;
+      }}
+      // Rule 3: Only file nodes if checked
+      if (onlyFiles && node.type !== 'file') {{
+        return false;
+      }}
+      return true;
+    }});
+
+    // Rule 2: Only connected nodes if checked
+    if (onlyConnected) {{
+      const connectedNodeIds = new Set();
+      rawEdges.forEach(edge => {{
+        connectedNodeIds.add(edge.from);
+        connectedNodeIds.add(edge.to);
+      }});
+      filteredNodes = filteredNodes.filter(node => connectedNodeIds.has(node.id));
+    }}
+
+    // Transform nodes for vis-network
+    const visNodes = filteredNodes.map(n => ({{
+      id: n.id,
+      label: n.label
+    }}));
+
+    // Filter edges to only include those between visible nodes
+    const visibleNodeIds = new Set(filteredNodes.map(n => n.id));
+    const visEdges = rawEdges.filter(e => 
+      visibleNodeIds.has(e.from) && visibleNodeIds.has(e.to)
+    );
+
+    // Update network
+    network.setData({{
+      nodes: new vis.DataSet(visNodes),
+      edges: new vis.DataSet(visEdges)
+    }});
+  }}
+
+  // Initialize network
+  function initNetwork() {{
+    const visNodes = rawNodes.map(n => ({{
+      id: n.id,
+      label: n.label
+    }}));
+    
+    network = new vis.Network(container, {{
+      nodes: new vis.DataSet(visNodes),
+      edges: new vis.DataSet(rawEdges)
+    }}, options);
+  }}
+
+  // Setup event listeners
+  document.getElementById('hideInit').addEventListener('change', applyFilters);
+  document.getElementById('onlyConnected').addEventListener('change', applyFilters);
+  document.getElementById('onlyFiles').addEventListener('change', applyFilters);
+
+  // Initialize on load
+  initNetwork();
 </script>
 
 </body>
